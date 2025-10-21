@@ -1,0 +1,249 @@
+/* ========================================
+   PRIMENG COMPONENT OVERRIDES
+   LegacyProcs Customizations
+   ======================================== */
+
+/* Table Customizations */
+.p-datatable {
+  .p-datatable-header {
+    background: var(--surface-50);
+    border: 1px solid var(--surface-300);
+    padding: 1rem;
+  }
+  
+  .p-datatable-thead > tr > th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+    border: none;
+  }
+  
+  .p-datatable-tbody > tr {
+    transition: background-color var(--transition-duration);
+    
+    &:hover {
+      background: var(--surface-50);
+    }
+    
+    > td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--surface-200);
+    }
+  }
+  
+  .p-paginator {
+    background: var(--surface-0);
+    border: 1px solid var(--surface-300);
+    border-top: none;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Button Customizations */
+.p-button {
+  font-weight: 500;
+  transition: all var(--transition-duration);
+  
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25);
+  }
+  
+  &.p-button-icon-only {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Input Customizations */
+.p-inputtext {
+  border: 1px solid var(--surface-300);
+  transition: border-color var(--transition-duration);
+  
+  &:enabled:hover {
+    border-color: var(--primary-color);
+  }
+  
+  &:enabled:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25);
+  }
+}
+
+/* Dropdown Customizations */
+.p-dropdown {
+  border: 1px solid var(--surface-300);
+  transition: border-color var(--transition-duration);
+  
+  &:not(.p-disabled):hover {
+    border-color: var(--primary-color);
+  }
+  
+  &:not(.p-disabled).p-focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25);
+  }
+}
+
+/* Dialog Customizations */
+.p-dialog {
+  .p-dialog-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.25rem;
+    
+    .p-dialog-title {
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+    
+    .p-dialog-header-icon {
+      color: white;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+  
+  .p-dialog-content {
+    padding: 1.5rem;
+  }
+  
+  .p-dialog-footer {
+    padding: 1rem 1.5rem;
+    background: var(--surface-50);
+    border-top: 1px solid var(--surface-300);
+  }
+}
+
+/* Toast Customizations */
+.p-toast {
+  .p-toast-message {
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    
+    &.p-toast-message-success {
+      background: var(--green-500);
+      border: none;
+      color: white;
+      
+      .p-toast-message-icon,
+      .p-toast-icon-close {
+        color: white;
+      }
+    }
+    
+    &.p-toast-message-error {
+      background: var(--red-500);
+      border: none;
+      color: white;
+      
+      .p-toast-message-icon,
+      .p-toast-icon-close {
+        color: white;
+      }
+    }
+    
+    &.p-toast-message-warn {
+      background: var(--yellow-500);
+      border: none;
+      color: white;
+      
+      .p-toast-message-icon,
+      .p-toast-icon-close {
+        color: white;
+      }
+    }
+    
+    &.p-toast-message-info {
+      background: var(--blue-500);
+      border: none;
+      color: white;
+      
+      .p-toast-message-icon,
+      .p-toast-icon-close {
+        color: white;
+      }
+    }
+  }
+}
+
+/* Confirm Dialog Customizations */
+.p-confirm-dialog {
+  .p-dialog-header {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .p-confirm-dialog-icon {
+    font-size: 2rem;
+    color: var(--yellow-500);
+  }
+}
+
+/* Tag/Badge Customizations */
+.p-tag {
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+}
+
+/* Menubar Customizations */
+.p-menubar {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  
+  .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    color: white;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .p-menuitem-icon {
+      color: white;
+    }
+  }
+}
+
+/* Skeleton Customizations */
+.p-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-200) 25%,
+    var(--surface-100) 50%,
+    var(--surface-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: p-skeleton-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes p-skeleton-animation {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .p-datatable {
+    font-size: 0.875rem;
+    
+    .p-datatable-thead > tr > th,
+    .p-datatable-tbody > tr > td {
+      padding: 0.5rem;
+    }
+  }
+  
+  .p-dialog {
+    width: 95vw !important;
+    max-width: none !important;
+  }
+}

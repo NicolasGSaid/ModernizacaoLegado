@@ -1,0 +1,71 @@
+<div class="primeng-test-container" style="padding: 2rem;">
+  <p-toast></p-toast>
+  
+  <h1>🧪 Teste de Componentes PrimeNG</h1>
+  <p>Validação de instalação e configuração do PrimeNG 17.18</p>
+  
+  <div style="margin: 2rem 0;">
+    <h2>Botões</h2>
+    <p-button label="Sucesso" icon="pi pi-check" severity="success" (onClick)="showSuccess()" style="margin-right: 0.5rem"></p-button>
+    <p-button label="Erro" icon="pi pi-times" severity="danger" (onClick)="showError()" style="margin-right: 0.5rem"></p-button>
+    <p-button label="Info" icon="pi pi-info-circle" severity="info" style="margin-right: 0.5rem"></p-button>
+    <p-button label="Ícone" icon="pi pi-star" [rounded]="true" style="margin-right: 0.5rem"></p-button>
+  </div>
+  
+  <div style="margin: 2rem 0;">
+    <h2>Tabela com Badges</h2>
+    <p-table [value]="testData()" [paginator]="true" [rows]="5">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.titulo }}</td>
+          <td>
+            <p-tag [value]="item.status" [severity]="getSeverity(item.status)"></p-tag>
+          </td>
+          <td>
+            <p-button icon="pi pi-pencil" [rounded]="true" severity="info" size="small" style="margin-right: 0.25rem"></p-button>
+            <p-button icon="pi pi-trash" [rounded]="true" severity="danger" size="small"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  
+  <div style="margin: 2rem 0;">
+    <h2>Formulário</h2>
+    <div class="p-field" style="margin-bottom: 1rem;">
+      <label for="titulo">Título</label>
+      <input pInputText id="titulo" placeholder="Digite o título" style="width: 100%; margin-top: 0.5rem;" />
+    </div>
+    
+    <div class="p-field">
+      <label for="status">Status</label>
+      <p-dropdown 
+        [options]="statusOptions" 
+        placeholder="Selecione o status"
+        optionLabel="label"
+        optionValue="value"
+        style="width: 100%; margin-top: 0.5rem;">
+      </p-dropdown>
+    </div>
+  </div>
+  
+  <div style="margin-top: 2rem; padding: 1rem; background: #e8f5e9; border-radius: 4px;">
+    <h3 style="color: #2e7d32; margin: 0 0 0.5rem 0;">✅ Status da Instalação</h3>
+    <ul style="margin: 0; padding-left: 1.5rem;">
+      <li>PrimeNG 17.18 instalado</li>
+      <li>PrimeIcons funcionando</li>
+      <li>Tema Lara Light Blue aplicado</li>
+      <li>Componentes renderizando corretamente</li>
+      <li>Variáveis customizadas carregadas</li>
+    </ul>
+  </div>
+</div>

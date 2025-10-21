@@ -1,0 +1,137 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo-section">
+        <i class="pi pi-code hero-icon"></i>
+        <h1>LegacyProcs</h1>
+      </div>
+      <p class="subtitle">Sistema de Gerenciamento de Ordens de Serviço</p>
+      <p class="tagline">Modernização de Aplicação Legacy com Angular 18 + .NET 8</p>
+    </div>
+  </section>
+
+  <!-- About Project -->
+  <section class="about">
+    <div class="card">
+      <h2>📋 Sobre o Projeto</h2>
+      <p>
+        O <strong>LegacyProcs</strong> é um projeto de portfólio que demonstra a modernização completa 
+        de uma aplicação legacy, aplicando as melhores práticas de desenvolvimento moderno.
+      </p>
+      <p>
+        Este projeto foi desenvolvido como parte de um processo de modernização técnica, 
+        migrando de tecnologias antigas para um stack moderno e escalável.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-stack">
+    <h2>🚀 Tecnologias Utilizadas</h2>
+    
+    <div class="tech-grid">
+      <!-- Frontend -->
+      <div class="tech-card">
+        <i class="pi pi-desktop tech-icon"></i>
+        <h3>Frontend</h3>
+        <ul>
+          <li><strong>Angular 18+</strong> (Standalone Components)</li>
+          <li><strong>PrimeNG 17</strong> (UI Components)</li>
+          <li><strong>TypeScript</strong> (Strict Mode)</li>
+          <li><strong>RxJS</strong> (Reactive Programming)</li>
+          <li><strong>Signals</strong> (State Management)</li>
+        </ul>
+      </div>
+
+      <!-- Backend -->
+      <div class="tech-card">
+        <i class="pi pi-server tech-icon"></i>
+        <h3>Backend</h3>
+        <ul>
+          <li><strong>.NET 8 LTS</strong></li>
+          <li><strong>Clean Architecture</strong></li>
+          <li><strong>CQRS</strong> (MediatR)</li>
+          <li><strong>Entity Framework Core 8</strong></li>
+          <li><strong>SQL Server</strong></li>
+        </ul>
+      </div>
+
+      <!-- Quality -->
+      <div class="tech-card">
+        <i class="pi pi-check-circle tech-icon"></i>
+        <h3>Qualidade</h3>
+        <ul>
+          <li><strong>xUnit</strong> (Testes Unitários)</li>
+          <li><strong>FluentValidation</strong></li>
+          <li><strong>OWASP Top 10</strong> (Segurança)</li>
+          <li><strong>Clean Code</strong></li>
+          <li><strong>SOLID Principles</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>✨ Funcionalidades</h2>
+    
+    <div class="features-grid">
+      <div class="feature-card" routerLink="/ordem-servico">
+        <i class="pi pi-file-edit"></i>
+        <h3>Ordens de Serviço</h3>
+        <p>Gerenciamento completo de ordens de serviço com status e atribuição de técnicos</p>
+      </div>
+
+      <div class="feature-card" routerLink="/cliente">
+        <i class="pi pi-users"></i>
+        <h3>Clientes</h3>
+        <p>Cadastro e gestão de clientes com informações completas</p>
+      </div>
+
+      <div class="feature-card" routerLink="/tecnico">
+        <i class="pi pi-wrench"></i>
+        <h3>Técnicos</h3>
+        <p>Controle de técnicos com especialidades e status</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="pi pi-moon"></i>
+        <h3>Dark Mode</h3>
+        <p>Tema claro e escuro com paleta Menta & Grafite</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer -->
+  <section class="developer">
+    <div class="card">
+      <h2>👨‍💻 Desenvolvedor</h2>
+      <p class="dev-name"><strong>Nicolas Dias</strong></p>
+      <p>Desenvolvedor Full Stack especializado em modernização de aplicações e arquitetura de software.</p>
+      
+      <div class="social-links">
+        <a [href]="githubUrl" target="_blank" rel="noopener noreferrer" class="social-btn github">
+          <i class="pi pi-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+          <i class="pi pi-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Explore o Sistema</h2>
+    <p>Navegue pelas funcionalidades e veja a modernização em ação</p>
+    <div class="cta-buttons">
+      <button class="cta-btn primary" routerLink="/ordem-servico">
+        <i class="pi pi-arrow-right"></i>
+        Acessar Sistema
+      </button>
+    </div>
+  </section>
+</div>

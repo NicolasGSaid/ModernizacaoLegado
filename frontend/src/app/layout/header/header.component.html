@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="header-container">
+    <div class="logo-section">
+      <button mat-icon-button class="menu-button" (click)="toggleMobileMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a routerLink="/" class="logo">
+        <mat-icon>build</mat-icon>
+        <span class="logo-text">LegacyProcs</span>
+      </a>
+    </div>
+
+    <nav class="desktop-nav">
+      <a mat-button routerLink="/ordem-servico" routerLinkActive="active">
+        <mat-icon>assignment</mat-icon>
+        Ordens de Serviço
+      </a>
+      <a mat-button routerLink="/cliente" routerLinkActive="active">
+        <mat-icon>business</mat-icon>
+        Clientes
+      </a>
+      <a mat-button routerLink="/tecnico" routerLinkActive="active">
+        <mat-icon>engineering</mat-icon>
+        Técnicos
+      </a>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <div class="theme-section">
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" [class.open]="isMobileMenuOpen()">
+    <a mat-button routerLink="/ordem-servico" routerLinkActive="active" (click)="toggleMobileMenu()">
+      <mat-icon>assignment</mat-icon>
+      Ordens de Serviço
+    </a>
+    <a mat-button routerLink="/cliente" routerLinkActive="active" (click)="toggleMobileMenu()">
+      <mat-icon>business</mat-icon>
+      Clientes
+    </a>
+    <a mat-button routerLink="/tecnico" routerLinkActive="active" (click)="toggleMobileMenu()">
+      <mat-icon>engineering</mat-icon>
+      Técnicos
+    </a>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,15 @@
+2025-10-18 23:21:01.904 -03:00 [ERR] Erro em ListarOrdensServicoQuery após 4ms: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+System.InvalidOperationException: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at LegacyProcs.Infrastructure.Repositories.OrdemServicoRepository.GetPagedAsync(Int32 page, Int32 pageSize, String filtro) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Repositories\OrdemServicoRepository.cs:line 63
+   at LegacyProcs.Application.Queries.ListarOrdensServicoQueryHandler.Handle(ListarOrdensServicoQuery request, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Queries\ListarOrdensServicoQueryHandler.cs:line 31
+   at LegacyProcs.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Behaviors\LoggingBehavior.cs:line 28

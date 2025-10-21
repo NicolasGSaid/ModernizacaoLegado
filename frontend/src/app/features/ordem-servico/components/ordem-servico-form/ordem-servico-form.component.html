@@ -1,0 +1,57 @@
+<div class="form-container">
+  <h2>{{ ordemId ? 'Editar' : 'Nova' }} Ordem de Serviço</h2>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="titulo" required>
+      @if (form.get('titulo')?.hasError('required')) {
+        <mat-error>Título é obrigatório</mat-error>
+      }
+      @if (form.get('titulo')?.hasError('minlength')) {
+        <mat-error>Mínimo 3 caracteres</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName="descricao" rows="4" required></textarea>
+      @if (form.get('descricao')?.hasError('required')) {
+        <mat-error>Descrição é obrigatória</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Técnico Responsável</mat-label>
+      <mat-select formControlName="tecnico" required>
+        <mat-option value="">Selecione um técnico</mat-option>
+        @for (tecnico of tecnicos; track tecnico.id) {
+          <mat-option [value]="tecnico.nome">
+            {{ tecnico.nome }} - {{ tecnico.especialidade }}
+          </mat-option>
+        }
+      </mat-select>
+      @if (form.get('tecnico')?.hasError('required')) {
+        <mat-error>Técnico é obrigatório</mat-error>
+      }
+    </mat-form-field>
+
+    @if (ordemId) {
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          @for (status of statusOptions; track status) {
+            <mat-option [value]="status">{{ status }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    }
+
+    <div class="form-actions">
+      <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">
+        {{ ordemId ? 'Atualizar' : 'Criar' }}
+      </button>
+    </div>
+  </form>
+</div>

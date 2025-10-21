@@ -1,0 +1,105 @@
+<div class="cliente-form-container">
+  <h1>{{ clienteId ? 'Editar Cliente' : 'Novo Cliente' }}</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="cliente-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Razão Social *</mat-label>
+        <input matInput formControlName="razaoSocial" placeholder="Digite a razão social">
+        <mat-error *ngIf="form.get('razaoSocial')?.hasError('required')">
+          Razão social é obrigatória
+        </mat-error>
+        <mat-error *ngIf="form.get('razaoSocial')?.hasError('minlength')">
+          Mínimo de 3 caracteres
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome Fantasia</mat-label>
+        <input matInput formControlName="nomeFantasia" placeholder="Digite o nome fantasia">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>CNPJ *</mat-label>
+        <input matInput formControlName="cnpj" placeholder="00000000000000" maxlength="14">
+        <mat-error *ngIf="form.get('cnpj')?.hasError('required')">
+          CNPJ é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('cnpj')?.hasError('pattern')">
+          CNPJ deve conter 14 dígitos
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Email *</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="email@exemplo.com">
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          Email é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">
+          Email inválido
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" placeholder="(00) 00000-0000">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>CEP *</mat-label>
+        <input matInput formControlName="cep" placeholder="00000000" maxlength="8">
+        <mat-error *ngIf="form.get('cep')?.hasError('required')">
+          CEP é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('cep')?.hasError('pattern')">
+          CEP deve conter 8 dígitos
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Endereço *</mat-label>
+        <input matInput formControlName="endereco" placeholder="Rua, número, complemento">
+        <mat-error *ngIf="form.get('endereco')?.hasError('required')">
+          Endereço é obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Cidade *</mat-label>
+        <input matInput formControlName="cidade" placeholder="Digite a cidade">
+        <mat-error *ngIf="form.get('cidade')?.hasError('required')">
+          Cidade é obrigatória
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Estado *</mat-label>
+        <input matInput formControlName="estado" placeholder="UF" maxlength="2">
+        <mat-error *ngIf="form.get('estado')?.hasError('required')">
+          Estado é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('estado')?.hasError('minlength') || form.get('estado')?.hasError('maxlength')">
+          Estado deve ter 2 caracteres
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button type="button" (click)="onCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ clienteId ? 'Atualizar' : 'Criar' }}
+      </button>
+    </div>
+  </form>
+</div>

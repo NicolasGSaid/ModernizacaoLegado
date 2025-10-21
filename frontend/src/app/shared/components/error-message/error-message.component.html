@@ -1,0 +1,6 @@
+@if (message()) {
+  <div class="error-message" [class]="type()">
+    <mat-icon>{{ type() === 'error' ? 'error' : type() === 'warning' ? 'warning' : 'info' }}</mat-icon>
+    <span>{{ message() }}</span>
+  </div>
+}

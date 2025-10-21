@@ -1,0 +1,98 @@
+<div class="cliente-list-container">
+  <!-- Header com título e botão -->
+  <div class="header">
+    <h2>Clientes</h2>
+    <p-button 
+      label="Novo Cliente" 
+      icon="pi pi-plus" 
+      (onClick)="onCreate()">
+    </p-button>
+  </div>
+  
+  <!-- Barra de busca com PrimeNG -->
+  <div class="search-bar">
+    <input 
+      pInputText 
+      type="text" 
+      [(ngModel)]="busca" 
+      (keyup.enter)="onSearch()"
+      class="search-input"
+      placeholder="Buscar por razão social, CNPJ ou email..." />
+    <p-button 
+      label="Buscar" 
+      icon="pi pi-search" 
+      severity="secondary"
+      (onClick)="onSearch()">
+    </p-button>
+  </div>
+
+  <!-- Tabela PrimeNG -->
+  <p-table 
+    [value]="clientes()" 
+    [paginator]="false"
+    [loading]="isLoading()"
+    styleClass="p-datatable-gridlines"
+    [tableStyle]="{'min-width': '50rem'}">
+    
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 5%">ID</th>
+        <th style="width: 20%">Razão Social</th>
+        <th style="width: 15%">Nome Fantasia</th>
+        <th style="width: 12%">CNPJ</th>
+        <th style="width: 15%">Email</th>
+        <th style="width: 10%">Telefone</th>
+        <th style="width: 10%">Cidade</th>
+        <th style="width: 5%">UF</th>
+        <th style="width: 8%">Ações</th>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-cliente>
+      <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.razaoSocial }}</td>
+        <td>{{ cliente.nomeFantasia || '-' }}</td>
+        <td>{{ cliente.cnpj }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.telefone || '-' }}</td>
+        <td>{{ cliente.cidade }}</td>
+        <td>{{ cliente.estado }}</td>
+        <td>
+          <p-button 
+            icon="pi pi-pencil" 
+            [text]="true"
+            severity="info" 
+            size="small"
+            (onClick)="onEdit(cliente)">
+          </p-button>
+          <p-button 
+            icon="pi pi-trash" 
+            [text]="true"
+            severity="danger" 
+            size="small"
+            (onClick)="onDelete(cliente)">
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="9" style="text-align: center; padding: 2rem;">
+          <i class="pi pi-inbox" style="font-size: 3rem; color: #9e9e9e;"></i>
+          <p style="margin-top: 1rem; color: #757575;">Nenhum cliente encontrado</p>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <!-- Paginação customizada -->
+  <app-pagination
+    [page]="page()"
+    [pageSize]="pageSize()"
+    [totalItems]="totalItems()"
+    (pageChange)="onPageChange($event)"
+    (pageSizeChange)="onPageSizeChange($event)">
+  </app-pagination>
+</div>

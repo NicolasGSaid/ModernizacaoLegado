@@ -1,0 +1,1 @@
+2025-10-18 23:22:07.822 -03:00 [ERR] Health check database with status "Unhealthy" completed after 26.232ms with message 'Erro na conexão: InvalidOperationException'

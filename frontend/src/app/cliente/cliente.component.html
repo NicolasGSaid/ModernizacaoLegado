@@ -1,0 +1,173 @@
+<!-- ❌ Mais HTML duplicado -->
+<div class="cliente-container">
+  <div class="header">
+    <h2>Gerenciamento de Clientes</h2>
+    <button class="btn-primary" (click)="abrirFormulario()">+ Novo Cliente</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="mostrarFormulario">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h3>{{ editando ? 'Editar' : 'Novo' }} Cliente</h3>
+        <button class="btn-close" (click)="fecharFormulario()">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <form (ngSubmit)="salvar()">
+          <div class="form-row">
+            <div class="form-group col-8">
+              <label>Razão Social *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="novoCliente.razaoSocial" 
+                name="razaoSocial"
+                class="form-control"
+                required>
+            </div>
+
+            <div class="form-group col-4">
+              <label>CNPJ *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="novoCliente.cnpj" 
+                name="cnpj"
+                class="form-control"
+                placeholder="00.000.000/0000-00"
+                maxlength="18"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nome Fantasia</label>
+            <input 
+              type="text" 
+              [(ngModel)]="novoCliente.nomeFantasia" 
+              name="nomeFantasia"
+              class="form-control">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label>Email</label>
+              <input 
+                type="email" 
+                [(ngModel)]="novoCliente.email" 
+                name="email"
+                class="form-control">
+            </div>
+
+            <div class="form-group col-6">
+              <label>Telefone</label>
+              <input 
+                type="tel" 
+                [(ngModel)]="novoCliente.telefone" 
+                name="telefone"
+                class="form-control"
+                placeholder="(11) 3456-7890">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Endereço</label>
+            <input 
+              type="text" 
+              [(ngModel)]="novoCliente.endereco" 
+              name="endereco"
+              class="form-control"
+              placeholder="Rua, número, complemento">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-5">
+              <label>Cidade</label>
+              <input 
+                type="text" 
+                [(ngModel)]="novoCliente.cidade" 
+                name="cidade"
+                class="form-control">
+            </div>
+
+            <div class="form-group col-2">
+              <label>Estado</label>
+              <select 
+                [(ngModel)]="novoCliente.estado" 
+                name="estado"
+                class="form-control">
+                <option value="">--</option>
+                <option *ngFor="let estado of estados" [value]="estado">
+                  {{ estado }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group col-5">
+              <label>CEP</label>
+              <input 
+                type="text" 
+                [(ngModel)]="novoCliente.cep" 
+                name="cep"
+                class="form-control"
+                placeholder="00000-000"
+                maxlength="9">
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn-secondary" (click)="fecharFormulario()">
+              Cancelar
+            </button>
+            <button type="submit" class="btn-primary">
+              {{ editando ? 'Atualizar' : 'Salvar' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela -->
+  <div class="tabela-container">
+    <table class="tabela-clientes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Razão Social</th>
+          <th>Nome Fantasia</th>
+          <th>CNPJ</th>
+          <th>Cidade/UF</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.razaoSocial }}</td>
+          <td>{{ cliente.nomeFantasia || '-' }}</td>
+          <td>{{ formatarCNPJ(cliente.cnpj) }}</td>
+          <td>{{ cliente.cidade || '-' }}{{ cliente.estado ? '/' + cliente.estado : '' }}</td>
+          <td>{{ cliente.telefone || '-' }}</td>
+          <td>
+            <div class="acoes">
+              <button class="btn-small btn-info" (click)="editarCliente(cliente)">
+                Editar
+              </button>
+              
+              <button class="btn-small btn-danger" (click)="excluir(cliente.id)">
+                Excluir
+              </button>
+            </div>
+          </td>
+        </tr>
+        
+        <tr *ngIf="clientes.length === 0">
+          <td colspan="7" style="text-align: center; padding: 40px;">
+            Nenhum cliente encontrado.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="ordem-servico-list-container">
+  <h2>Ordens de Serviço</h2>
+  
+  <!-- Barra de busca com PrimeNG -->
+  <div class="search-bar" style="margin-bottom: 1rem;">
+    <span class="p-input-icon-left" style="width: 100%;">
+      <i class="pi pi-search"></i>
+      <input 
+        pInputText 
+        type="text" 
+        [(ngModel)]="filtro" 
+        (keyup.enter)="onSearch()"
+        placeholder="Buscar por título, descrição ou técnico..." 
+        style="width: 100%;" />
+    </span>
+  </div>
+
+  <!-- Tabela PrimeNG -->
+  <p-table 
+    [value]="ordensServico()" 
+    [paginator]="true" 
+    [rows]="pageSize()"
+    [totalRecords]="totalItems()"
+    [lazy]="true"
+    (onLazyLoad)="onLazyLoad($event)"
+    [loading]="isLoading()"
+    styleClass="p-datatable-gridlines"
+    [tableStyle]="{'min-width': '50rem'}">
+    
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 5%">ID</th>
+        <th style="width: 20%">Título</th>
+        <th style="width: 30%">Descrição</th>
+        <th style="width: 12%">Status</th>
+        <th style="width: 15%">Técnico</th>
+        <th style="width: 10%">Data</th>
+        <th style="width: 8%">Ações</th>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-ordem>
+      <tr>
+        <td>{{ ordem.id }}</td>
+        <td>{{ ordem.titulo }}</td>
+        <td>{{ ordem.descricao }}</td>
+        <td>
+          <p-tag 
+            [value]="ordem.status" 
+            [severity]="getStatusSeverity(ordem.status)">
+          </p-tag>
+        </td>
+        <td>{{ ordem.tecnico }}</td>
+        <td>{{ ordem.dataCriacao | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <p-button 
+            icon="pi pi-pencil" 
+            [rounded]="true" 
+            severity="info" 
+            size="small"
+            pTooltip="Editar ordem de serviço"
+            tooltipPosition="top"
+            (onClick)="onEdit(ordem)"
+            style="margin-right: 0.25rem">
+          </p-button>
+          <p-button 
+            icon="pi pi-trash" 
+            [rounded]="true" 
+            severity="danger" 
+            size="small"
+            pTooltip="Excluir ordem de serviço"
+            tooltipPosition="top"
+            (onClick)="onDelete(ordem)">
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7" style="text-align: center; padding: 2rem;">
+          <i class="pi pi-inbox" style="font-size: 3rem; color: #9e9e9e;"></i>
+          <p style="margin-top: 1rem; color: #757575;">Nenhuma ordem de serviço encontrada</p>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<!-- FAB Button para criar nova ordem -->
+<app-fab-button 
+  icon="add" 
+  tooltip="Nova Ordem de Serviço" 
+  (onClick)="onCreate()">
+</app-fab-button>
+
+<app-loading-spinner></app-loading-spinner>

@@ -1,0 +1,1277 @@
+2025-10-18 23:17:55.327 -03:00 [ERR] Erro em ListarOrdensServicoQuery após 0ms: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+System.InvalidOperationException: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at LegacyProcs.Infrastructure.Repositories.OrdemServicoRepository.GetPagedAsync(Int32 page, Int32 pageSize, String filtro) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Repositories\OrdemServicoRepository.cs:line 63
+   at LegacyProcs.Application.Queries.ListarOrdensServicoQueryHandler.Handle(ListarOrdensServicoQuery request, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Queries\ListarOrdensServicoQueryHandler.cs:line 31
+   at LegacyProcs.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Behaviors\LoggingBehavior.cs:line 28
+2025-10-18 23:17:55.336 -03:00 [ERR] Erro inesperado ao listar ordens de serviço
+System.InvalidOperationException: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.CountAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at LegacyProcs.Infrastructure.Repositories.OrdemServicoRepository.GetPagedAsync(Int32 page, Int32 pageSize, String filtro) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Repositories\OrdemServicoRepository.cs:line 63
+   at LegacyProcs.Application.Queries.ListarOrdensServicoQueryHandler.Handle(ListarOrdensServicoQuery request, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Queries\ListarOrdensServicoQueryHandler.cs:line 31
+   at LegacyProcs.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Behaviors\LoggingBehavior.cs:line 28
+   at LegacyProcs.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Application\Behaviors\ValidationBehavior.cs:line 37
+   at LegacyProcs.Controllers.OrdemServicoController.Get(String filtro, Int32 page, Int32 pageSize) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Controllers\OrdemServicoController.cs:line 70
+2025-10-18 23:20:59.501 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:20:59.613 -03:00 [ERR] Erro no health check do banco de dados
+System.InvalidOperationException: Services for database providers 'Microsoft.EntityFrameworkCore.SqlServer', 'Microsoft.EntityFrameworkCore.InMemory' have been registered in the service provider. Only a single database provider can be registered in a service provider. If possible, ensure that Entity Framework is managing its service provider by removing the call to 'UseInternalServiceProvider'. Otherwise, consider conditionally registering the database provider, or maintaining one service provider per database provider.
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.Initialize(IServiceProvider scopedProvider, DbContextOptions contextOptions, DbContext context)
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Storage.IDatabaseFacadeDependenciesAccessor.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetFacadeDependencies(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetConnectionString(DatabaseFacade databaseFacade)
+   at LegacyProcs.Infrastructure.HealthChecks.DatabaseHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\HealthChecks\DatabaseHealthCheck.cs:line 49
+2025-10-18 23:20:59.620 -03:00 [ERR] Health check database with status "Unhealthy" completed after 9.8427ms with message 'Erro na conexão: InvalidOperationException'
+2025-10-18 23:20:59.712 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:00.718 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.718 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.718 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.719 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 206, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.719 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 205, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.719 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 207, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.720 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 211, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.720 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 211, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.720 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 212, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.720 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.721 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.721 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.721 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.723 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 216, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.723 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 217, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.723 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 218, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.724 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 221, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.725 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.724 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.724 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 219, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.724 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 224, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.725 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 224, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.725 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.725 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.726 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 227, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.725 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.726 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 228, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.726 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 228, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.738 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 234, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.739 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.738 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 239, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 239, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 242, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 242, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.741 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 245, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 247, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 247, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.741 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 244, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.741 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 244, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 246, IP: Unknown, UserAgent: 
+2025-10-18 23:21:00.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 247, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.853 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.854 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 249, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.855 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 250, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.857 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 251, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.858 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 252, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.860 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 253, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.861 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 254, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.863 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 255, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.885 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 256, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.886 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 257, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.888 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 258, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.889 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 259, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.890 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 260, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.891 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 261, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.892 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 262, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.893 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 263, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.894 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 264, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.897 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 265, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.899 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 266, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.900 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 267, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.901 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 268, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.902 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 269, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.904 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 270, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.905 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 271, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.906 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 272, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.908 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 273, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.909 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 274, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.918 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 275, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.921 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 276, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.922 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 277, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.923 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 278, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.924 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 279, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.925 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 280, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.929 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 281, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.930 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 282, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.932 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 283, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.941 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 284, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.942 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 285, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.942 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 286, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.943 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 287, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.943 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 288, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.944 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 289, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.948 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 290, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.950 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 291, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.951 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 292, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.952 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 293, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.953 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 294, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.954 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 295, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.955 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 296, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.956 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 297, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.957 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 298, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.958 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 299, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.959 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 300, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.960 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 301, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.962 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 302, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.963 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 303, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.965 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 304, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.966 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 305, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.966 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 306, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.974 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 307, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.975 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 308, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.976 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 309, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.977 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 310, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.982 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 311, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.983 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 312, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.984 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 313, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.985 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 314, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.986 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 315, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.987 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 316, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.988 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 317, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.990 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 318, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.991 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 319, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.992 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 320, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.992 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 321, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.993 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 322, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.994 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 323, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.996 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 324, IP: Unknown, UserAgent: 
+2025-10-18 23:21:01.997 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 325, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.006 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 326, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.007 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 327, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.008 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 328, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.009 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 329, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.010 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 330, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.011 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 331, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.013 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 332, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.015 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 333, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.016 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 334, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.017 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 335, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.018 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 336, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.019 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 337, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.020 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 338, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.021 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 339, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.022 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 340, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.023 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 341, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.024 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 342, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.025 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 343, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.026 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 344, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.026 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 345, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.027 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 346, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.029 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 347, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.030 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 348, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.032 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 349, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.040 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 350, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.042 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 351, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.043 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 352, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.043 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 353, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.045 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 354, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.048 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 355, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.049 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 356, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.050 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 357, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.051 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 358, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.052 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 359, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.053 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 360, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.054 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 361, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.055 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 362, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.056 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 363, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.057 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 364, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.057 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 365, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.058 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 366, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.059 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 367, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.060 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 368, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.061 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 369, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.062 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 370, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.063 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 371, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.064 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 372, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.065 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 373, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.066 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 374, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.066 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 375, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.067 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 376, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.068 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 377, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.069 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 378, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.070 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 379, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.071 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 380, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.071 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 381, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.072 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 382, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.073 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 383, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.094 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 384, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.096 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 385, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.097 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 386, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.098 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 387, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.099 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 388, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.100 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 389, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.101 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 390, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.102 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 391, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.103 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 392, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.103 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 393, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.104 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 394, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.105 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 395, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.106 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 396, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.107 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 397, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.107 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 398, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.108 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 399, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.109 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 400, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.109 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 401, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.110 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 402, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.111 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 403, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.113 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 404, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.113 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 405, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.114 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 406, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.115 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 407, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.116 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 408, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.117 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 409, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.118 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 410, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.118 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 411, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.119 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 412, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.120 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 413, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.121 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 414, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.121 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 415, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.122 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 416, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.123 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 417, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.124 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 418, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.125 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 419, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.125 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 420, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.126 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 421, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.127 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 422, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.128 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 423, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.129 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 424, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.138 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 425, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.139 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 426, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.140 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 427, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.141 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 428, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.141 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 429, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.142 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 430, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.143 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 431, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.143 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 432, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.144 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 433, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.146 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 434, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.147 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 435, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.149 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 436, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.149 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 437, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.150 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 438, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.151 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 439, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.152 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 440, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.153 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 441, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.153 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 442, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.154 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 443, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.155 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 444, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.156 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 445, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.157 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 446, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.157 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 447, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.158 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 448, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.159 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 449, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.159 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 450, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.160 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 451, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.161 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 452, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.162 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 453, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.163 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 454, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.164 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 455, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.164 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 456, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.165 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 457, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.166 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 458, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.167 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 459, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.168 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 460, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.168 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 461, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.169 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 462, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.170 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 463, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.171 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 464, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.172 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 465, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.172 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 466, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.173 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 467, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.174 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 468, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.174 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 469, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.175 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 470, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.176 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 471, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.176 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 472, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.177 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 473, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.178 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 474, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.186 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 475, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.186 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 476, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.187 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 477, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.188 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 478, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.188 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 479, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.189 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 480, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.190 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 481, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.190 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 482, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.191 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 483, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.191 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 484, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.192 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 485, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.193 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 486, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.193 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 487, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.194 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 488, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.195 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 489, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.196 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 490, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.197 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 491, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.198 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 492, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.199 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 493, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.200 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 494, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.201 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 495, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.201 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 496, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.202 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/tecnico, Requests: 497, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.422 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 202, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.422 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.422 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.422 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.423 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 205, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.424 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 207, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.425 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 211, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.424 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 207, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.425 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 211, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 216, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 214, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 214, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.427 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 217, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 216, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 214, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.427 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 217, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.450 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 217, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.450 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 219, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.451 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 221, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.451 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.451 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.451 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 224, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.452 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.452 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.452 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.453 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 228, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.453 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 228, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.453 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 229, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.454 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 231, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 235, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.454 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 233, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.454 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 235, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 235, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.456 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 239, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.456 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 239, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.456 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 239, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.457 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 240, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.457 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 242, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.458 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 245, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.458 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 243, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.457 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 242, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.458 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 245, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.458 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 245, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.459 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 247, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.460 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 247, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.684 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.684 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 249, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.685 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 250, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.686 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 251, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.689 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 252, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.690 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 253, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.691 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 254, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.692 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 255, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.693 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 256, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.693 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 257, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.694 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 258, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.695 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 259, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.697 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 260, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.697 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 261, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.698 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 262, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.699 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 263, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.700 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 264, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.701 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 265, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.702 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 266, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.702 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 267, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.703 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 268, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.704 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 269, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.705 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 270, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.705 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 271, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.706 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 272, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.707 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 273, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.707 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 274, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.708 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 275, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.709 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 276, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.709 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 277, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.710 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 278, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.711 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 279, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.712 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 280, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.713 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 281, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.714 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 282, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.715 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 283, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.716 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 284, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.717 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 285, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.717 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 286, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.718 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 287, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.719 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 288, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.726 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 289, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.726 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 290, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.727 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 291, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.728 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 292, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.729 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 293, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.730 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 294, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.731 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 295, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.731 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 296, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.732 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 297, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.733 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 298, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.733 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 299, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.734 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 300, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.734 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 301, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.735 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 302, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.736 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 303, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 304, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.737 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 305, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.738 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 306, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.738 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 307, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.739 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 308, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 309, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.740 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 310, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.741 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 311, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 312, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.742 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 313, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.743 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 314, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.743 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 315, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.744 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 316, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.745 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 317, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.746 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 318, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.747 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 319, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.748 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 320, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.749 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 321, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.749 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 322, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.750 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 323, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.751 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 324, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.751 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 325, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.752 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 326, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.753 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 327, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.754 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 328, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.754 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 329, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.755 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 330, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.755 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 331, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.756 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 332, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.757 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 333, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.757 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 334, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.758 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 335, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.758 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 336, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.759 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 337, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.760 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 338, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.760 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 339, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.761 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 340, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.762 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 341, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.763 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 342, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.764 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 343, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.765 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 344, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.766 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 345, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.766 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 346, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.767 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 347, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.768 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 348, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.768 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 349, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.769 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 350, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.770 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 351, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.771 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 352, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.771 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 353, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.772 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 354, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.773 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 355, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.773 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 356, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.774 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 357, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.775 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 358, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.776 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 359, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.776 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 360, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.777 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 361, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.778 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 362, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.780 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 363, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.781 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 364, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.781 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 365, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.782 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 366, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.783 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 367, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.784 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 368, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.784 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 369, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.785 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 370, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.786 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 371, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.786 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 372, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.787 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 373, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.788 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 374, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.789 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 375, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.789 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 376, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.790 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 377, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.791 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 378, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.792 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 379, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.792 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 380, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.793 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 381, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.794 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 382, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.795 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 383, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.796 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 384, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.797 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 385, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.798 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 386, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.799 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 387, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.800 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 388, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.801 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 389, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.802 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 390, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.802 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 391, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.803 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 392, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.804 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 393, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.805 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 394, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.806 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 395, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.807 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 396, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.807 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 397, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.808 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 398, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.809 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 399, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.810 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 400, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.811 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 401, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.813 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 402, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.814 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 403, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.815 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 404, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.816 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 405, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.816 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 406, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.817 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 407, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.818 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 408, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.819 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 409, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.820 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 410, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.820 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 411, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.821 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 412, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.822 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 413, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.823 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 414, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.824 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 415, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.824 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 416, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.825 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 417, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.826 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 418, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.827 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 419, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.828 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 420, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.829 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 421, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.830 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 422, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.831 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 423, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.832 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 424, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.832 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 425, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.833 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 426, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.834 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 427, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.834 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 428, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.835 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 429, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.836 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 430, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.836 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 431, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.837 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 432, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.838 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 433, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.838 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 434, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.839 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 435, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.840 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 436, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.840 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 437, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.841 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 438, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.842 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 439, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.842 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 440, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.843 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 441, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.844 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 442, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.845 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 443, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.846 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 444, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.847 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 445, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.848 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 446, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.848 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 447, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.849 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 448, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.850 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 449, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.850 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 450, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.851 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 451, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.852 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 452, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.853 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 453, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.859 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 454, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.860 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 455, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.861 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 456, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.862 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 457, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.862 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 458, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.863 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 459, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.864 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 460, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.865 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 461, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.865 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 462, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.866 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 463, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.867 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 464, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.867 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 465, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.868 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 466, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.869 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 467, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.869 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 468, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.870 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 469, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.871 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 470, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.871 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 471, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.872 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 472, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.873 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 473, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.873 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 474, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.874 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 475, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.875 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 476, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.875 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 477, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.876 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 478, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.877 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 479, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.878 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 480, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.879 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 481, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.880 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 482, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.881 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 483, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.882 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 484, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.882 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 485, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.883 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 486, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.883 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 487, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.884 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 488, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.885 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 489, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.885 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 490, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.886 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 491, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.886 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 492, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.887 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 493, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.887 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 494, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.888 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 495, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.889 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 496, IP: Unknown, UserAgent: 
+2025-10-18 23:21:02.889 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 497, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.025 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 202, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.025 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 202, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.026 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 204, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.026 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 205, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.026 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 205, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 210, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.027 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 207, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 212, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 211, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.027 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 210, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.028 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 213, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.030 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 217, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.030 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 219, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.031 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.030 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 219, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.030 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 220, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.031 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 220, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.031 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 223, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.031 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.031 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 222, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.032 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 224, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.032 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.032 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 225, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.033 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 228, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.033 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 226, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.034 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 231, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.034 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 232, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.034 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 233, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.034 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 235, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 238, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 236, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.036 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 238, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.035 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 238, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.038 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 244, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.037 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 241, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.037 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 242, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.037 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 243, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.038 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 246, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.038 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 244, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.047 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.039 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.047 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.039 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 248, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.048 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 249, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.273 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 250, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.274 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 251, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.275 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 252, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.276 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 253, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.276 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 254, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.277 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 255, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.279 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 256, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.280 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 257, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.281 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 258, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.282 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 259, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.283 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 260, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.284 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 261, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.284 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 262, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.285 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 263, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.286 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 264, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.287 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 265, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.287 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 266, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.288 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 267, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.289 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 268, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.290 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 269, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.290 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 270, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.291 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 271, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.291 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 272, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.292 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 273, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.293 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 274, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.294 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 275, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.295 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 276, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.295 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 277, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.296 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 278, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.297 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 279, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.298 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 280, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.299 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 281, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.299 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 282, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.300 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 283, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.301 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 284, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.301 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 285, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.302 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 286, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.303 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 287, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.303 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 288, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.304 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 289, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.305 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 290, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.305 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 291, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.306 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 292, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.306 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 293, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.307 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 294, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.308 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 295, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.308 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 296, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.309 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 297, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.310 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 298, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.310 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 299, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.311 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 300, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.312 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 301, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.313 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 302, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.314 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 303, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.315 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 304, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.315 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 305, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.316 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 306, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.317 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 307, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.317 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 308, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.318 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 309, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.319 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 310, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.320 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 311, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.320 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 312, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.321 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 313, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.322 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 314, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.322 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 315, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.323 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 316, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.323 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 317, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.324 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 318, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.325 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 319, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.325 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 320, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.326 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 321, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.327 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 322, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.328 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 323, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.329 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 324, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.329 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 325, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.330 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 326, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.331 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 327, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.332 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 328, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.333 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 329, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.333 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 330, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.334 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 331, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.335 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 332, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.335 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 333, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.336 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 334, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.337 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 335, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.337 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 336, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.338 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 337, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.339 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 338, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.339 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 339, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.340 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 340, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.341 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 341, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.341 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 342, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.342 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 343, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.342 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 344, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.343 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 345, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.344 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 346, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.345 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 347, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.345 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 348, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.346 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 349, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.347 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 350, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.348 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 351, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.349 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 352, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.349 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 353, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.350 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 354, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.351 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 355, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.352 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 356, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.352 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 357, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.353 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 358, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.354 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 359, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.355 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 360, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.355 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 361, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.356 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 362, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.357 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 363, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.357 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 364, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.358 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 365, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.359 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 366, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.359 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 367, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.360 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 368, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.361 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 369, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.362 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 370, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.363 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 371, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.364 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 372, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.365 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 373, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.365 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 374, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.372 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 375, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.373 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 376, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.374 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 377, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.374 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 378, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.375 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 379, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.376 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 380, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.376 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 381, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.377 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 382, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.378 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 383, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.380 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 384, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.381 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 385, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.382 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 386, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.382 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 387, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.383 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 388, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.384 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 389, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.384 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 390, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.385 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 391, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.386 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 392, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.387 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 393, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.388 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 394, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.389 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 395, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.389 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 396, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.390 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 397, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.391 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 398, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.391 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 399, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.392 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 400, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.393 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 401, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.393 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 402, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.394 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 403, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.395 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 404, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.397 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 405, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.398 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 406, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.398 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 407, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.399 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 408, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.400 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 409, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.400 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 410, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.401 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 411, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.402 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 412, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.403 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 413, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.403 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 414, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.404 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 415, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.405 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 416, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.406 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 417, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.406 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 418, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.407 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 419, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.408 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 420, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.409 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 421, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.409 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 422, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.410 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 423, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.411 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 424, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.412 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 425, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.413 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 426, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.414 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 427, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.414 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 428, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.415 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 429, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.416 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 430, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.417 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 431, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.417 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 432, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.418 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 433, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.419 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 434, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.420 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 435, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.421 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 436, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.421 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 437, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.422 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 438, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.423 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 439, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.424 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 440, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.424 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 441, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.425 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 442, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 443, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.426 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 444, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.428 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 445, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.429 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 446, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.430 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 447, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.431 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 448, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.432 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 449, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.433 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 450, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.433 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 451, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.434 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 452, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.435 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 453, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.436 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 454, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.436 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 455, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.437 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 456, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.438 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 457, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.439 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 458, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.439 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 459, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.440 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 460, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.441 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 461, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.442 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 462, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.442 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 463, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.444 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 464, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.447 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 465, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.448 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 466, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.449 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 467, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.450 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 468, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.450 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 469, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.451 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 470, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.452 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 471, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.452 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 472, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.453 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 473, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.454 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 474, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 475, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.455 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 476, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.456 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 477, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.457 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 478, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.457 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 479, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.458 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 480, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.459 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 481, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.460 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 482, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.461 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 483, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.462 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 484, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.463 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 485, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.464 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 486, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.465 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 487, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.465 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 488, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.466 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 489, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.467 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 490, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.468 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 491, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.468 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 492, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.469 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 493, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.470 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 494, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.471 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 495, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.471 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 496, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.472 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 497, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.473 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 498, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.474 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/ordemservico, Requests: 499, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.479 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 498, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.480 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 499, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.481 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 500, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.482 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 501, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.512 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 502, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.515 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: <script[^>]*>.*?</script>
+2025-10-18 23:21:03.518 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.520 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: onerror\s*=
+2025-10-18 23:21:03.523 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.532 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: javascript:
+2025-10-18 23:21:03.534 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.548 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: onload\s*=
+2025-10-18 23:21:03.550 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.580 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: javascript:
+2025-10-18 23:21:03.584 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.587 -03:00 [ERR] Tentativa de XSS detectada de Unknown para /api/cliente. Padrão: onload\s*=
+2025-10-18 23:21:03.594 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.614 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:21:03.619 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.872 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:21:03.873 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.874 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(AND|OR)\b.{1,6}?(=|>|<|\!|<=|>=))
+2025-10-18 23:21:03.875 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.877 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:21:03.879 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.881 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:21:03.882 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.884 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(AND|OR)\b.{1,6}?(=|>|<|\!|<=|>=))
+2025-10-18 23:21:03.885 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.889 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(AND|OR)\b.{1,6}?(=|>|<|\!|<=|>=))
+2025-10-18 23:21:03.890 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.891 -03:00 [ERR] Tentativa de SQL Injection detectada de Unknown para /api/cliente. Padrão: (\b(ALTER|CREATE|DELETE|DROP|EXEC(UTE){0,1}|INSERT( +INTO){0,1}|MERGE|SELECT|UPDATE|UNION( +ALL){0,1})\b)
+2025-10-18 23:21:03.893 -03:00 [ERR] Erro não tratado na requisição POST /api/cliente
+System.InvalidOperationException: The status code cannot be set, the response has already started.
+   at Microsoft.AspNetCore.TestHost.ResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\pagam\OneDrive\Documentos\GitHub\Trabalho\TesteTimeLegado\backend\LegacyProcs\Infrastructure\Middleware\GlobalExceptionMiddleware.cs:line 32
+2025-10-18 23:21:03.903 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 503, IP: Unknown, UserAgent: 
+2025-10-18 23:21:03.905 -03:00 [ERR] Possível tentativa de abuso detectada. Cliente: ip:Unknown, Endpoint: GET:/api/cliente, Requests: 504, IP: Unknown, UserAgent: 

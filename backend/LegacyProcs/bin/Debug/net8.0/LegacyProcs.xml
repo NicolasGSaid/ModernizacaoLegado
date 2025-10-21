@@ -1,0 +1,838 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LegacyProcs</name>
+    </assembly>
+    <members>
+        <member name="T:LegacyProcs.Application.Behaviors.LoggingBehavior`2">
+            <summary>
+            Pipeline behavior para logging automático de requests/responses
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Behaviors.ValidationBehavior`2">
+            <summary>
+            Pipeline behavior para validação automática usando FluentValidation
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AlterarStatusOrdemServicoCommand">
+            <summary>
+            Command para alterar status de uma ordem de serviço
+            Extrai lógica do controller PUT para camada Application
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AlterarStatusOrdemServicoCommandHandler">
+            <summary>
+            Handler para alterar status de ordem de serviço
+            Contém lógica de negócio extraída do controller PUT
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AlterarStatusOrdemServicoCommandValidator">
+            <summary>
+            Validator para AlterarStatusOrdemServicoCommand
+            Valida ID e Status antes da execução
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AlterarStatusTecnicoCommandHandler">
+            <summary>
+            Handler para alterar status do técnico
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarClienteCommand">
+            <summary>
+            Command para atualizar cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarClienteCommandHandler">
+            <summary>
+            Handler para atualizar cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarOrdemServicoCommand">
+            <summary>
+            Command para atualizar todos os dados de uma ordem de serviço
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarOrdemServicoCommandHandler">
+            <summary>
+            Handler para atualizar todos os dados de uma ordem de serviço
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarOrdemServicoCommandValidator">
+            <summary>
+            Validador para AtualizarOrdemServicoCommand
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.AtualizarTecnicoCommandHandler">
+            <summary>
+            Handler para atualizar técnico
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarClienteCommand">
+            <summary>
+            Command para criar cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarClienteCommandHandler">
+            <summary>
+            Handler para criar cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarOrdemServicoCommand">
+            <summary>
+            Command para criar uma nova ordem de serviço
+            Extrai lógica do controller POST para camada Application
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarOrdemServicoCommandHandler">
+            <summary>
+            Handler para criar ordem de serviço
+            Contém a lógica de negócio extraída do controller
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarOrdemServicoCommandValidator">
+            <summary>
+            Validator para CriarOrdemServicoCommand
+            Substitui validações do ModelState por FluentValidation
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.CriarTecnicoCommandHandler">
+            <summary>
+            Handler para criar técnico
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirClienteCommand">
+            <summary>
+            Command para excluir cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirClienteCommandHandler">
+            <summary>
+            Handler para excluir cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirDadosClienteCommand">
+            <summary>
+            Command para exclusão completa de dados do cliente - Right to Erasure LGPD
+            Implementa o direito ao esquecimento conforme Art. 18, VI da LGPD
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirDadosClienteCommandHandler">
+            <summary>
+            Handler para exclusão completa de dados do cliente - Right to Erasure LGPD
+            Implementa hard delete com auditoria completa
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirDadosClienteCommandValidator">
+            <summary>
+            Validador para ExcluirDadosClienteCommand - Right to Erasure LGPD
+            Garante que todos os requisitos legais sejam atendidos
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirOrdemServicoCommand">
+            <summary>
+            Command para excluir uma ordem de serviço
+            Extrai lógica do controller DELETE para camada Application
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirOrdemServicoCommandHandler">
+            <summary>
+            Handler para excluir ordem de serviço
+            Contém lógica de negócio extraída do controller DELETE
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirOrdemServicoCommandValidator">
+            <summary>
+            Validator para ExcluirOrdemServicoCommand
+            Valida ID antes da execução
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Commands.ExcluirTecnicoCommandHandler">
+            <summary>
+            Handler para excluir técnico
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.ICommand">
+            <summary>
+            Interface base para Commands (operações de escrita)
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.ICommand`1">
+            <summary>
+            Interface base para Commands com retorno (operações de escrita)
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.ICommandHandler`1">
+            <summary>
+            Interface base para Command Handlers
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.ICommandHandler`2">
+            <summary>
+            Interface base para Command Handlers com retorno
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.IQuery`1">
+            <summary>
+            Interface base para Queries (operações de leitura)
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Common.IQueryHandler`2">
+            <summary>
+            Interface base para Query Handlers
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.DTOs.PaginatedResultDto`1">
+            <summary>
+            DTO para resultados paginados
+            Encapsula dados + metadados de paginação
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ExportarDadosClienteQuery">
+            <summary>
+            Query para exportação de dados do cliente - Data Portability LGPD
+            Implementa o direito à portabilidade conforme Art. 18, V da LGPD
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ExportarDadosClienteQueryHandler">
+            <summary>
+            Handler para exportação de dados do cliente - Data Portability LGPD
+            Suporta múltiplos formatos: JSON, XML, CSV
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarClientesQuery">
+            <summary>
+            Query para listar clientes com paginação e busca
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarClientesQueryHandler">
+            <summary>
+            Handler para listar clientes
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarOrdensServicoQuery">
+            <summary>
+            Query para listar ordens de serviço com paginação e filtro
+            Extrai lógica do controller GET para camada Application
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarOrdensServicoQueryHandler">
+            <summary>
+            Handler para listar ordens de serviço
+            Contém lógica de consulta extraída do controller GET
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarOrdensServicoQueryValidator">
+            <summary>
+            Validator para ListarOrdensServicoQuery
+            Valida parâmetros de paginação
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ListarTecnicosQueryHandler">
+            <summary>
+            Handler para listar técnicos
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterClientePorIdQuery">
+            <summary>
+            Query para obter cliente por ID
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterClientePorIdQueryHandler">
+            <summary>
+            Handler para obter cliente por ID
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterOrdemServicoPorIdQuery">
+            <summary>
+            Query para obter uma ordem de serviço por ID
+            Extrai lógica do controller GET por ID para camada Application
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterOrdemServicoPorIdQueryHandler">
+            <summary>
+            Handler para obter ordem de serviço por ID
+            Contém lógica de consulta extraída do controller GET por ID
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterOrdemServicoPorIdQueryValidator">
+            <summary>
+            Validator para ObterOrdemServicoPorIdQuery
+            Valida ID antes da execução
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Application.Queries.ObterTecnicoPorIdQueryHandler">
+            <summary>
+            Handler para obter técnico por ID
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.ClienteController">
+            <summary>
+            Controller para gerenciar Clientes
+            MODERNIZADO: Padrão CQRS com MediatR
+            CORRIGIDO: SQL Injection eliminado
+            CORRIGIDO: Lógica extraída para Commands/Queries
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.ClienteController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+            GET: api/cliente
+            Lista todos os clientes com busca opcional
+            MODERNIZADO: Usa CQRS Query pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.ClienteController.Get(System.Int32)">
+            <summary>
+            GET: api/cliente/5
+            Obtém um cliente por ID
+            MODERNIZADO: Usa CQRS Query pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.ClienteController.Post(LegacyProcs.Controllers.DTOs.ClienteCreateDto)">
+            <summary>
+            POST: api/cliente
+            Cria um novo cliente
+            MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.ClienteController.Put(System.Int32,LegacyProcs.Controllers.DTOs.ClienteUpdateDto)">
+            <summary>
+            PUT: api/cliente/5
+            Atualiza um cliente existente
+            MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.ClienteController.Delete(System.Int32)">
+            <summary>
+            DELETE: api/cliente/5
+            Exclui um cliente
+            MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.ClienteCreateDto">
+            <summary>
+            DTO para criação de cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.ClienteResponseDto">
+            <summary>
+            DTO de resposta para cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.ClienteUpdateDto">
+            <summary>
+            DTO para atualização de cliente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.OrdemServicoCreateDto">
+            <summary>
+            DTO para criação de Ordem de Serviço
+            Usado para receber dados do frontend sem expor a entidade diretamente
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.OrdemServicoUpdateDto">
+            <summary>
+            DTO para atualização completa da Ordem de Serviço
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.OrdemServicoUpdateStatusDto">
+            <summary>
+            DTO para atualização de status da Ordem de Serviço
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.DTOs.OrdemServicoResponseDto">
+            <summary>
+            DTO para resposta da API
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.OrdemServicoController">
+            <summary>
+            Controller para gerenciar Ordens de Serviço
+            Modernizado: ASP.NET Core + Entity Framework Core + Rich Domain Model
+            ✅ CORRIGIDO: SQL Injection eliminado com EF Core
+            ✅ CORRIGIDO: Validações movidas para camada Domain
+            ✅ CORRIGIDO: Lógica de negócio encapsulada na entidade
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+            Lista todas as ordens de serviço com paginação e filtro opcional
+            </summary>
+            <param name="filtro">Filtro opcional para buscar por título</param>
+            <param name="page">Número da página (padrão: 1)</param>
+            <param name="pageSize">Itens por página (padrão: 10, máximo: 100)</param>
+            <returns>Lista paginada de ordens de serviço</returns>
+            <response code="200">Lista retornada com sucesso</response>
+            <response code="400">Parâmetros de paginação inválidos</response>
+            <response code="500">Erro interno do servidor</response>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.Get(System.Int32)">
+            <summary>
+            Obtém uma ordem de serviço específica por ID
+            </summary>
+            <param name="id">ID da ordem de serviço</param>
+            <returns>Dados da ordem de serviço</returns>
+            <response code="200">Ordem de serviço encontrada</response>
+            <response code="400">ID inválido</response>
+            <response code="404">Ordem de serviço não encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.Post(LegacyProcs.Controllers.DTOs.OrdemServicoCreateDto)">
+            <summary>
+            POST: api/ordemservico
+            Cria uma nova ordem de serviço
+            ✅ REFATORADO: Usa padrão CQRS com MediatR
+            ✅ CORRIGIDO: Validações automáticas com FluentValidation
+            ✅ CORRIGIDO: Lógica extraída para Command Handler
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.Put(System.Int32,LegacyProcs.Controllers.DTOs.OrdemServicoUpdateDto)">
+            <summary>
+            PUT: api/ordemservico/5
+            Atualiza todos os dados de uma ordem de serviço
+            ✅ REFATORADO: Usa padrão CQRS com MediatR
+            ✅ CORRIGIDO: Validações automáticas com FluentValidation
+            ✅ CORRIGIDO: Lógica extraída para Command Handler
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.PatchStatus(System.Int32,LegacyProcs.Controllers.DTOs.OrdemServicoUpdateStatusDto)">
+            <summary>
+            PATCH: api/ordemservico/5/status
+            Atualiza apenas o status de uma ordem de serviço
+            ✅ REFATORADO: Usa padrão CQRS com MediatR
+            ✅ CORRIGIDO: Validações automáticas com FluentValidation
+            ✅ CORRIGIDO: Lógica extraída para Command Handler
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.OrdemServicoController.Delete(System.Int32)">
+            <summary>
+            DELETE: api/ordemservico/5
+            Exclui uma ordem de serviço
+            ✅ REFATORADO: Usa padrão CQRS com MediatR
+            ✅ CORRIGIDO: Validações automáticas com FluentValidation
+            ✅ CORRIGIDO: Lógica extraída para Command Handler
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Controllers.TecnicoController">
+            <summary>
+            Controller para gerenciar Técnicos
+            ✅ MODERNIZADO: Padrão CQRS com MediatR
+            ✅ CORRIGIDO: SQL Injection eliminado
+            ✅ CORRIGIDO: Lógica extraída para Commands/Queries
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+            GET: api/tecnico
+            Lista todos os técnicos com filtro opcional
+            ✅ MODERNIZADO: Usa CQRS Query pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.Get(System.Int32)">
+            <summary>
+            GET: api/tecnico/5
+            Obtém um técnico por ID
+            ✅ MODERNIZADO: Usa CQRS Query pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.Post(LegacyProcs.Controllers.DTOs.TecnicoCreateDto)">
+            <summary>
+            POST: api/tecnico
+            Cria um novo técnico
+            ✅ MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.Put(System.Int32,LegacyProcs.Controllers.DTOs.TecnicoUpdateDto)">
+            <summary>
+            PUT: api/tecnico/5
+            Atualiza um técnico existente
+            ✅ MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.AlterarStatus(System.Int32,LegacyProcs.Controllers.DTOs.TecnicoAlterarStatusDto)">
+            <summary>
+            PATCH: api/tecnico/5/status
+            Altera o status de um técnico
+            ✅ MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Controllers.TecnicoController.Delete(System.Int32)">
+            <summary>
+            DELETE: api/tecnico/5
+            Exclui um técnico
+            ✅ MODERNIZADO: Usa CQRS Command pattern
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Entities.AuditLog">
+            <summary>
+            Entidade para Audit Trail - LGPD Compliance
+            Registra todas as operações realizadas nos dados pessoais
+            Conforme Art. 37 da LGPD - Registro das operações de tratamento
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Entities.Cliente">
+            <summary>
+            Entidade de domínio Cliente modernizada
+            Migrada de model anêmico para Rich Domain Model
+            Implementa validações de CNPJ, email e encapsulamento
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Entities.OrdemServico">
+            <summary>
+            Entidade de domínio OrdemServico modernizada
+            Migrada de model anêmico para Rich Domain Model
+            Implementa validações de domínio e encapsulamento
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Entities.Tecnico">
+            <summary>
+            Entidade de domínio Tecnico modernizada
+            Migrada de model anêmico para Rich Domain Model
+            Implementa validações de email, telefone e encapsulamento
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Enums.StatusOS">
+            <summary>
+            Enum para status da Ordem de Serviço
+            Modernizado de string para enum type-safe
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Enums.StatusOSExtensions">
+            <summary>
+            Extensões para o enum StatusOS
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Enums.StatusTecnico">
+            <summary>
+            Enum para status do Técnico
+            Modernizado de string para enum type-safe
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Enums.StatusTecnicoExtensions">
+            <summary>
+            Extensões para o enum StatusTecnico
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.ClienteNotFoundException">
+            <summary>
+            Exceção lançada quando um cliente não é encontrado
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.DomainException">
+            <summary>
+            Exceção base para erros de domínio
+            Representa violações de regras de negócio
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.EntityNotFoundException">
+            <summary>
+            Exceção para quando uma entidade não é encontrada
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.OrdemServicoNotFoundException">
+            <summary>
+            Exceção específica para OrdemServico não encontrada
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.BusinessRuleViolationException">
+            <summary>
+            Exceção para violações de regras de negócio
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.DuplicateDataException">
+            <summary>
+            Exceção para dados duplicados
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Exceptions.TecnicoNotFoundException">
+            <summary>
+            Exceção lançada quando um técnico não é encontrado
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Interfaces.IAuditLogRepository">
+            <summary>
+            Interface para repositório de Audit Log - LGPD Compliance
+            Responsável por persistir logs de auditoria das operações
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.AdicionarAsync(LegacyProcs.Domain.Entities.AuditLog,System.Threading.CancellationToken)">
+            <summary>
+            Adiciona um novo registro de auditoria
+            </summary>
+            <param name="auditLog">Registro de auditoria</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ObterPorEntidadeAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Obtém logs de auditoria por entidade
+            </summary>
+            <param name="entityName">Nome da entidade</param>
+            <param name="entityId">ID da entidade (opcional)</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ObterPorUsuarioAsync(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Obtém logs de auditoria por usuário
+            </summary>
+            <param name="userId">ID do usuário</param>
+            <param name="dataInicio">Data de início (opcional)</param>
+            <param name="dataFim">Data de fim (opcional)</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ObterPorOperacaoAsync(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Obtém logs de auditoria por operação
+            </summary>
+            <param name="operation">Tipo de operação</param>
+            <param name="dataInicio">Data de início (opcional)</param>
+            <param name="dataFim">Data de fim (opcional)</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ObterOperacoesSensiveisAsync(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Obtém logs de operações sensíveis (DELETE, EXPORT, ANONYMIZE)
+            </summary>
+            <param name="dataInicio">Data de início (opcional)</param>
+            <param name="dataFim">Data de fim (opcional)</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ContarTotalAsync(System.Threading.CancellationToken)">
+            <summary>
+            Conta total de registros de auditoria
+            </summary>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="M:LegacyProcs.Domain.Interfaces.IAuditLogRepository.ObterEstatisticasAsync(System.DateTime,System.DateTime,System.Threading.CancellationToken)">
+            <summary>
+            Obtém estatísticas de auditoria
+            </summary>
+            <param name="dataInicio">Data de início</param>
+            <param name="dataFim">Data de fim</param>
+            <param name="cancellationToken">Token de cancelamento</param>
+        </member>
+        <member name="T:LegacyProcs.Domain.Interfaces.IClienteRepository">
+            <summary>
+            Interface do repositório para Cliente
+            Define contratos para operações de persistência
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Interfaces.IOrdemServicoRepository">
+            <summary>
+            Interface do repositório para OrdemServico
+            Define contratos para operações de persistência
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Domain.Interfaces.ITecnicoRepository">
+            <summary>
+            Interface do repositório para Tecnico
+            Define contratos para operações de persistência
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configurations.AuditLogConfiguration">
+            <summary>
+            Configuração do Entity Framework para AuditLog - LGPD Compliance
+            Define mapeamento, índices e constraints para otimizar consultas de auditoria
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configurations.ClienteConfiguration">
+            <summary>
+            Configuração específica da entidade Cliente
+            Centraliza mapeamento e configurações de banco de dados
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configurations.OrdemServicoConfiguration">
+            <summary>
+            Configuração específica da entidade OrdemServico
+            Centraliza mapeamento e configurações de banco de dados
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configurations.TecnicoConfiguration">
+            <summary>
+            Configuração específica da entidade Tecnico
+            Centraliza mapeamento e configurações de banco de dados
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configuration.ApiSettings">
+            <summary>
+            Configurações da API
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.Version">
+            <summary>
+            Versão da API
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.Title">
+            <summary>
+            Título da API
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.MaxPageSize">
+            <summary>
+            Tamanho máximo de página para paginação
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.DefaultPageSize">
+            <summary>
+            Tamanho padrão de página
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.EnableSwagger">
+            <summary>
+            Habilita Swagger (apenas desenvolvimento)
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.ApiSettings.DetailedErrors">
+            <summary>
+            Exibe erros detalhados (apenas desenvolvimento/teste)
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configuration.RateLimitOptions">
+            <summary>
+            Configurações para Rate Limiting
+            Implementa limites por método HTTP conforme Global Rules - Seção 9 (Segurança)
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.DefaultMaxRequests">
+            <summary>
+            Limite padrão de requisições por janela de tempo
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.GetMaxRequests">
+            <summary>
+            Limite específico para requisições GET
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.PostMaxRequests">
+            <summary>
+            Limite específico para requisições POST
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.PutMaxRequests">
+            <summary>
+            Limite específico para requisições PUT
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.DeleteMaxRequests">
+            <summary>
+            Limite específico para requisições DELETE
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.DefaultWindowMinutes">
+            <summary>
+            Janela de tempo em minutos para contagem de requisições
+            </summary>
+        </member>
+        <member name="M:LegacyProcs.Infrastructure.Configuration.RateLimitOptions.GetLimitForMethod(System.String)">
+            <summary>
+            Obtém o limite máximo para um método HTTP específico
+            </summary>
+            <param name="method">Método HTTP</param>
+            <returns>Limite máximo de requisições</returns>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Configuration.SecuritySettings">
+            <summary>
+            Configurações de segurança da aplicação
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.SecuritySettings.RequireHttps">
+            <summary>
+            Requer HTTPS para todas as requisições
+            </summary>
+        </member>
+        <member name="P:LegacyProcs.Infrastructure.Configuration.SecuritySettings.EnableCors">
+            <summary>
+            Habilita CORS (apenas para desenvolvimento)
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Data.AppDbContext">
+            <summary>
+            Contexto do Entity Framework Core
+            Substitui o ADO.NET legado por ORM moderno e seguro
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.HealthChecks.DatabaseHealthCheck">
+            <summary>
+            Health check customizado para banco de dados com timeout configurável
+            Seguindo Global Rules - Seção 14: SLO/SLI e Orçamento de Erros
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.AuditMiddleware">
+            <summary>
+            Middleware para auditoria automática de operações - LGPD Compliance
+            Intercepta todas as requisições e registra operações em dados pessoais
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.GlobalExceptionMiddleware">
+            <summary>
+            Middleware global para tratamento de exceções
+            Implementa logging seguro sem exposição de dados sensíveis
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.ErrorResponse">
+            <summary>
+            Modelo de resposta de erro padronizado
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.ValidationError">
+            <summary>
+            Modelo para erros de validação
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.InputSanitizationMiddleware">
+            <summary>
+            Middleware para Input Sanitization - OWASP Protection
+            Sanitiza automaticamente entradas para prevenir ataques de injeção
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.RateLimitingMiddleware">
+            <summary>
+            Middleware para Rate Limiting - OWASP Protection
+            Implementa proteção contra DDoS e abuso de API
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Middleware.SecurityHeadersMiddleware">
+            <summary>
+            Middleware para Security Headers - NIST SSDF Compliance
+            Implementa headers de segurança conforme OWASP Security Headers
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Repositories.AuditLogRepository">
+            <summary>
+            Implementação do repositório de Audit Log - LGPD Compliance
+            Responsável por persistir e consultar logs de auditoria
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Repositories.ClienteRepository">
+            <summary>
+            Implementação do repositório para Cliente usando Entity Framework Core
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Repositories.OrdemServicoRepository">
+            <summary>
+            Implementação do repositório para OrdemServico usando Entity Framework Core
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Repositories.TecnicoRepository">
+            <summary>
+            Implementação do repositório para Tecnico usando Entity Framework Core
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Infrastructure.Swagger.SwaggerSchemaFilter">
+            <summary>
+            Filtro para personalizar esquemas Swagger com exemplos
+            </summary>
+        </member>
+        <member name="T:LegacyProcs.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:LegacyProcs.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LegacyProcs.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LegacyProcs.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

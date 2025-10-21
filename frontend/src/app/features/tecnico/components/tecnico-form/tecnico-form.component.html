@@ -1,0 +1,65 @@
+<div class="tecnico-form-container">
+  <h1>{{ tecnicoId ? 'Editar Técnico' : 'Novo Técnico' }}</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="tecnico-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome *</mat-label>
+        <input matInput formControlName="nome" placeholder="Digite o nome completo">
+        <mat-error *ngIf="form.get('nome')?.hasError('required')">
+          Nome é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('nome')?.hasError('minlength')">
+          Mínimo de 3 caracteres
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Email *</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="email@exemplo.com">
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          Email é obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">
+          Email inválido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Telefone *</mat-label>
+        <input matInput formControlName="telefone" placeholder="(00) 00000-0000">
+        <mat-error *ngIf="form.get('telefone')?.hasError('required')">
+          Telefone é obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Especialidade *</mat-label>
+        <input matInput formControlName="especialidade" placeholder="Ex: Redes, Hardware, Software">
+        <mat-error *ngIf="form.get('especialidade')?.hasError('required')">
+          Especialidade é obrigatória
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Status *</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let status of statusOptions" [value]="status">
+            {{ status }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button type="button" (click)="onCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ tecnicoId ? 'Atualizar' : 'Criar' }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # Backend - Development Overrides
+  # ============================================
+  backend:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Logging__LogLevel__Default=Debug
+      - Logging__LogLevel__Microsoft.AspNetCore=Debug
+    volumes:
+      # Hot reload support (optional)
+      - ./backend/LegacyProcs:/app:ro
+    ports:
+      # Expose debug port
+      - "5001:8081"
+
+  # ============================================
+  # Frontend - Development Overrides
+  # ============================================
+  frontend:
+    environment:
+      - NODE_ENV=development
+    # For development with hot reload, use ng serve instead
+    # command: npm start
+
+  # ============================================
+  # SQL Server - Development Overrides
+  # ============================================
+  sqlserver:
+    environment:
+      - MSSQL_COLLATION=Latin1_General_CI_AS
+    ports:
+      # Expose for external tools (SSMS, Azure Data Studio)
+      - "1433:1433"

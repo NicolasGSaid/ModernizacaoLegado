@@ -1,0 +1,103 @@
+<div class="form-container">
+  <!-- Header -->
+  <div class="form-header">
+    <h2>{{ ordemId ? 'Editar' : 'Nova' }} Ordem de Serviço</h2>
+  </div>
+
+  <!-- Card com formulário -->
+  <p-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+      
+      <!-- Título -->
+      <div class="field">
+        <label for="titulo" class="required">Título</label>
+        <input 
+          id="titulo"
+          type="text" 
+          pInputText 
+          formControlName="titulo"
+          placeholder="Digite o título da ordem"
+          [class.ng-invalid]="form.get('titulo')?.invalid && form.get('titulo')?.touched"
+          [class.ng-dirty]="form.get('titulo')?.touched" />
+        <small class="p-error" *ngIf="form.get('titulo')?.hasError('required') && form.get('titulo')?.touched">
+          Título é obrigatório
+        </small>
+        <small class="p-error" *ngIf="form.get('titulo')?.hasError('minlength') && form.get('titulo')?.touched">
+          Mínimo 3 caracteres
+        </small>
+      </div>
+
+      <!-- Descrição -->
+      <div class="field">
+        <label for="descricao" class="required">Descrição</label>
+        <textarea 
+          id="descricao"
+          pInputTextarea 
+          formControlName="descricao"
+          rows="4"
+          placeholder="Descreva os detalhes da ordem de serviço"
+          [class.ng-invalid]="form.get('descricao')?.invalid && form.get('descricao')?.touched"
+          [class.ng-dirty]="form.get('descricao')?.touched">
+        </textarea>
+        <small class="p-error" *ngIf="form.get('descricao')?.hasError('required') && form.get('descricao')?.touched">
+          Descrição é obrigatória
+        </small>
+      </div>
+
+      <!-- Técnico -->
+      <div class="field">
+        <label for="tecnico" class="required">Técnico Responsável</label>
+        <p-dropdown 
+          id="tecnico"
+          formControlName="tecnico"
+          [options]="tecnicos"
+          optionLabel="nome"
+          optionValue="nome"
+          placeholder="Selecione um técnico"
+          [showClear]="true"
+          [class.ng-invalid]="form.get('tecnico')?.invalid && form.get('tecnico')?.touched"
+          [class.ng-dirty]="form.get('tecnico')?.touched">
+          <ng-template let-tecnico pTemplate="item">
+            <div class="tecnico-item">
+              <span class="tecnico-nome">{{ tecnico.nome }}</span>
+              <span class="tecnico-especialidade">{{ tecnico.especialidade }}</span>
+            </div>
+          </ng-template>
+        </p-dropdown>
+        <small class="p-error" *ngIf="form.get('tecnico')?.hasError('required') && form.get('tecnico')?.touched">
+          Técnico é obrigatório
+        </small>
+      </div>
+
+      <!-- Status (apenas em edição) -->
+      <div class="field" *ngIf="ordemId">
+        <label for="status">Status</label>
+        <p-dropdown 
+          id="status"
+          formControlName="status"
+          [options]="statusOptions"
+          placeholder="Selecione o status">
+        </p-dropdown>
+      </div>
+
+      <!-- Botões de ação -->
+      <div class="form-actions">
+        <p-button 
+          label="Cancelar" 
+          icon="pi pi-times" 
+          severity="secondary"
+          [text]="true"
+          type="button"
+          (onClick)="onCancel()">
+        </p-button>
+        <p-button 
+          [label]="ordemId ? 'Atualizar' : 'Criar'" 
+          icon="pi pi-check" 
+          type="submit"
+          [disabled]="!form.valid">
+        </p-button>
+      </div>
+
+    </form>
+  </p-card>
+</div>

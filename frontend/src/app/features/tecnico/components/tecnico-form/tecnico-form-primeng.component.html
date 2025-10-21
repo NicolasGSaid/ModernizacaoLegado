@@ -1,0 +1,62 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ tecnicoId ? 'Editar Técnico' : 'Novo Técnico' }}</h2>
+  </div>
+
+  <p-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+      
+      <div class="field">
+        <label for="nome" class="required">Nome</label>
+        <input id="nome" type="text" pInputText formControlName="nome" placeholder="Nome completo do técnico" />
+        <small class="p-error" *ngIf="form.get('nome')?.hasError('required') && form.get('nome')?.touched">
+          Nome é obrigatório
+        </small>
+      </div>
+
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="email" class="required">Email</label>
+            <input id="email" type="email" pInputText formControlName="email" placeholder="email@exemplo.com" />
+            <small class="p-error" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+              Email é obrigatório
+            </small>
+            <small class="p-error" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+              Email inválido
+            </small>
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="telefone" class="required">Telefone</label>
+            <p-inputMask id="telefone" formControlName="telefone" mask="(99) 99999-9999" placeholder="(00) 00000-0000"></p-inputMask>
+            <small class="p-error" *ngIf="form.get('telefone')?.hasError('required') && form.get('telefone')?.touched">
+              Telefone é obrigatório
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="especialidade" class="required">Especialidade</label>
+        <input id="especialidade" type="text" pInputText formControlName="especialidade" placeholder="Ex: Elétrica, Hidráulica, etc." />
+        <small class="p-error" *ngIf="form.get('especialidade')?.hasError('required') && form.get('especialidade')?.touched">
+          Especialidade é obrigatória
+        </small>
+      </div>
+
+      <div class="field" *ngIf="tecnicoId">
+        <label for="status">Status</label>
+        <p-dropdown id="status" formControlName="status" [options]="statusOptions" placeholder="Selecione o status"></p-dropdown>
+      </div>
+
+      <div class="form-actions">
+        <p-button label="Cancelar" icon="pi pi-times" severity="secondary" [text]="true" type="button" (onClick)="onCancel()"></p-button>
+        <p-button [label]="tecnicoId ? 'Atualizar' : 'Criar'" icon="pi pi-check" type="submit" [disabled]="!form.valid"></p-button>
+      </div>
+
+    </form>
+  </p-card>
+</div>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="LegacyProcs Code Quality Rules" Description="Regras de qualidade de código para o projeto LegacyProcs" ToolsVersion="16.0">
+  <Localization ResourceAssembly="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.dll" ResourceBaseName="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.Localized">
+    <Name Resource="LegacyProcs_Title" />
+    <Description Resource="LegacyProcs_Description" />
+  </Localization>
+  
+  <!-- Regras de Design -->
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+    <Rule Id="CA1001" Action="Error" />   <!-- Types that own disposable fields should be disposable -->
+    <Rule Id="CA1009" Action="Error" />   <!-- Declare event handlers correctly -->
+    <Rule Id="CA1016" Action="Error" />   <!-- Mark assemblies with assembly version -->
+    <Rule Id="CA1033" Action="Error" />   <!-- Interface methods should be callable by child types -->
+    <Rule Id="CA1049" Action="Error" />   <!-- Types that own native resources should be disposable -->
+    <Rule Id="CA1060" Action="Error" />   <!-- Move pinvokes to native methods class -->
+    <Rule Id="CA1061" Action="Error" />   <!-- Do not hide base class methods -->
+    <Rule Id="CA1063" Action="Error" />   <!-- Implement IDisposable Correctly -->
+    <Rule Id="CA1065" Action="Error" />   <!-- Do not raise exceptions in unexpected locations -->
+    <Rule Id="CA1301" Action="Error" />   <!-- Avoid duplicate accelerators -->
+    <Rule Id="CA1400" Action="Error" />   <!-- P/Invoke entry points should exist -->
+    <Rule Id="CA1401" Action="Error" />   <!-- P/Invokes should not be visible -->
+    <Rule Id="CA1403" Action="Error" />   <!-- Auto layout types should not be COM visible -->
+    <Rule Id="CA1404" Action="Error" />   <!-- Call GetLastError immediately after P/Invoke -->
+    <Rule Id="CA1405" Action="Error" />   <!-- COM visible type base types should be COM visible -->
+    <Rule Id="CA1410" Action="Error" />   <!-- COM registration methods should be matched -->
+    <Rule Id="CA1415" Action="Error" />   <!-- Declare P/Invokes correctly -->
+    <Rule Id="CA1821" Action="Error" />   <!-- Remove empty Finalizers -->
+    <Rule Id="CA1900" Action="Error" />   <!-- Value type fields should be portable -->
+    <Rule Id="CA1901" Action="Error" />   <!-- P/Invoke declarations should be portable -->
+    <Rule Id="CA2002" Action="Error" />   <!-- Do not lock on objects with weak identity -->
+    <Rule Id="CA2100" Action="Error" />   <!-- Review SQL queries for security vulnerabilities -->
+    <Rule Id="CA2101" Action="Error" />   <!-- Specify marshaling for P/Invoke string arguments -->
+    <Rule Id="CA2108" Action="Error" />   <!-- Review declarative security on value types -->
+    <Rule Id="CA2111" Action="Error" />   <!-- Pointers should not be visible -->
+    <Rule Id="CA2112" Action="Error" />   <!-- Secured types should not expose fields -->
+    <Rule Id="CA2114" Action="Error" />   <!-- Method security should be a superset of type -->
+    <Rule Id="CA2116" Action="Error" />   <!-- APTCA methods should only call APTCA methods -->
+    <Rule Id="CA2117" Action="Error" />   <!-- APTCA types should only extend APTCA base types -->
+    <Rule Id="CA2122" Action="Error" />   <!-- Do not indirectly expose methods with link demands -->
+    <Rule Id="CA2123" Action="Error" />   <!-- Override link demands should be identical to base -->
+    <Rule Id="CA2124" Action="Error" />   <!-- Wrap vulnerable finally clauses in outer try -->
+    <Rule Id="CA2126" Action="Error" />   <!-- Type link demands require inheritance demands -->
+    <Rule Id="CA2131" Action="Error" />   <!-- Security critical types may not participate in type equivalence -->
+    <Rule Id="CA2132" Action="Error" />   <!-- Default constructors must be at least as critical as base type default constructors -->
+    <Rule Id="CA2133" Action="Error" />   <!-- Arrays must have elements with consistent transparency -->
+    <Rule Id="CA2134" Action="Error" />   <!-- Methods must keep consistent transparency when overriding base methods -->
+    <Rule Id="CA2137" Action="Error" />   <!-- Transparent methods must contain only verifiable IL -->
+    <Rule Id="CA2138" Action="Error" />   <!-- Transparent methods must not call methods with the SuppressUnmanagedCodeSecurity attribute -->
+    <Rule Id="CA2140" Action="Error" />   <!-- Transparent code must not reference security critical items -->
+    <Rule Id="CA2141" Action="Error" />   <!-- Transparent methods must not satisfy LinkDemands -->
+    <Rule Id="CA2146" Action="Error" />   <!-- Types must be at least as critical as their base types and interfaces -->
+    <Rule Id="CA2147" Action="Error" />   <!-- Transparent methods may not use security asserts -->
+    <Rule Id="CA2149" Action="Error" />   <!-- Transparent methods must not call into native code -->
+    <Rule Id="CA2200" Action="Error" />   <!-- Rethrow to preserve stack details -->
+    <Rule Id="CA2202" Action="Error" />   <!-- Do not dispose objects multiple times -->
+    <Rule Id="CA2207" Action="Error" />   <!-- Initialize value type static fields inline -->
+    <Rule Id="CA2212" Action="Error" />   <!-- Do not mark serviced components with WebMethod -->
+    <Rule Id="CA2213" Action="Error" />   <!-- Disposable fields should be disposed -->
+    <Rule Id="CA2214" Action="Error" />   <!-- Do not call overridable methods in constructors -->
+    <Rule Id="CA2216" Action="Error" />   <!-- Disposable types should declare finalizer -->
+    <Rule Id="CA2220" Action="Error" />   <!-- Finalizers should call base class finalizer -->
+    <Rule Id="CA2229" Action="Error" />   <!-- Implement serialization constructors -->
+    <Rule Id="CA2231" Action="Error" />   <!-- Overload operator equals on overriding value type Equals -->
+    <Rule Id="CA2232" Action="Error" />   <!-- Mark Windows Forms entry points with STAThread -->
+    <Rule Id="CA2235" Action="Error" />   <!-- Mark all non-serializable fields -->
+    <Rule Id="CA2236" Action="Error" />   <!-- Call base class methods on ISerializable types -->
+    <Rule Id="CA2237" Action="Error" />   <!-- Mark ISerializable types with serializable -->
+    <Rule Id="CA2238" Action="Error" />   <!-- Implement serialization methods correctly -->
+    <Rule Id="CA2240" Action="Error" />   <!-- Implement ISerializable correctly -->
+    <Rule Id="CA2241" Action="Error" />   <!-- Provide correct arguments to formatting methods -->
+    <Rule Id="CA2242" Action="Error" />   <!-- Test for NaN correctly -->
+  </Rules>
+  
+  <!-- Regras de Performance -->
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Performance" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Performance">
+    <Rule Id="CA1802" Action="Warning" /> <!-- Use literals where appropriate -->
+    <Rule Id="CA1805" Action="Warning" /> <!-- Do not initialize unnecessarily -->
+    <Rule Id="CA1810" Action="Warning" /> <!-- Initialize reference type static fields inline -->
+    <Rule Id="CA1812" Action="Warning" /> <!-- Avoid uninstantiated internal classes -->
+    <Rule Id="CA1813" Action="Warning" /> <!-- Avoid unsealed attributes -->
+    <Rule Id="CA1814" Action="Warning" /> <!-- Prefer jagged arrays over multidimensional -->
+    <Rule Id="CA1815" Action="Warning" /> <!-- Override equals and operator equals on value types -->
+    <Rule Id="CA1819" Action="Warning" /> <!-- Properties should not return arrays -->
+    <Rule Id="CA1820" Action="Warning" /> <!-- Test for empty strings using string length -->
+    <Rule Id="CA1822" Action="Warning" /> <!-- Mark members as static -->
+    <Rule Id="CA1823" Action="Warning" /> <!-- Avoid unused private fields -->
+  </Rules>
+  
+  <!-- Regras de Segurança -->
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Security" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Security">
+    <Rule Id="CA2100" Action="Error" />   <!-- Review SQL queries for security vulnerabilities -->
+    <Rule Id="CA3001" Action="Error" />   <!-- Review code for SQL injection vulnerabilities -->
+    <Rule Id="CA3002" Action="Error" />   <!-- Review code for XSS vulnerabilities -->
+    <Rule Id="CA3003" Action="Error" />   <!-- Review code for file path injection vulnerabilities -->
+    <Rule Id="CA3004" Action="Error" />   <!-- Review code for information disclosure vulnerabilities -->
+    <Rule Id="CA3005" Action="Error" />   <!-- Review code for LDAP injection vulnerabilities -->
+    <Rule Id="CA3006" Action="Error" />   <!-- Review code for process command injection vulnerabilities -->
+    <Rule Id="CA3007" Action="Error" />   <!-- Review code for open redirect vulnerabilities -->
+    <Rule Id="CA3008" Action="Error" />   <!-- Review code for XPath injection vulnerabilities -->
+    <Rule Id="CA3009" Action="Error" />   <!-- Review code for XML injection vulnerabilities -->
+    <Rule Id="CA3010" Action="Error" />   <!-- Review code for XAML injection vulnerabilities -->
+    <Rule Id="CA3011" Action="Error" />   <!-- Review code for DLL injection vulnerabilities -->
+    <Rule Id="CA3012" Action="Error" />   <!-- Review code for regex injection vulnerabilities -->
+  </Rules>
+  
+  <!-- Regras de Estilo -->
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.CodeStyle" RuleNamespace="Microsoft.CodeAnalysis.CSharp.CodeStyle">
+    <Rule Id="IDE0001" Action="Warning" /> <!-- Simplify Names -->
+    <Rule Id="IDE0002" Action="Warning" /> <!-- Simplify Member Access -->
+    <Rule Id="IDE0003" Action="Warning" /> <!-- Remove qualification -->
+    <Rule Id="IDE0005" Action="Warning" /> <!-- Using directive is unnecessary -->
+    <Rule Id="IDE0040" Action="Warning" /> <!-- Add accessibility modifiers -->
+    <Rule Id="IDE0044" Action="Warning" /> <!-- Add readonly modifier -->
+    <Rule Id="IDE0051" Action="Warning" /> <!-- Remove unused private members -->
+    <Rule Id="IDE0052" Action="Warning" /> <!-- Remove unread private members -->
+    <Rule Id="IDE0058" Action="None" />    <!-- Expression value is never used -->
+    <Rule Id="IDE0059" Action="Warning" /> <!-- Unnecessary assignment of a value -->
+    <Rule Id="IDE0060" Action="Warning" /> <!-- Remove unused parameter -->
+  </Rules>
+</RuleSet>

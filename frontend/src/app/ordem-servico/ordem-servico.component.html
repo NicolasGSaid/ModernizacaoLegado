@@ -1,0 +1,145 @@
+<!-- ✅ MODERNIZADO: HTML componentizado com FAB button -->
+<div class="ordem-servico-container">
+  <div class="header">
+    <h2>Gerenciamento de Ordens de Serviço</h2>
+  </div>
+
+  <!-- ❌ PROBLEMA: Formulário modal implementado de forma rudimentar -->
+  <div class="modal" *ngIf="mostrarFormulario">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>{{ editando ? 'Editar' : 'Nova' }} Ordem de Serviço</h3>
+        <button class="btn-close" (click)="fecharFormulario()">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <form (ngSubmit)="salvar()">
+          <div class="form-group">
+            <label>Título *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="novaOrdem.titulo" 
+              name="titulo"
+              class="form-control"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label>Descrição</label>
+            <textarea 
+              [(ngModel)]="novaOrdem.descricao" 
+              name="descricao"
+              class="form-control"
+              rows="4"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Técnico Responsável *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="novaOrdem.tecnico" 
+              name="tecnico"
+              class="form-control"
+              required>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn-secondary" (click)="fecharFormulario()">
+              Cancelar
+            </button>
+            <button type="submit" class="btn-primary">
+              {{ editando ? 'Atualizar' : 'Salvar' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ❌ PROBLEMA: Tabela não responsiva, sem paginação -->
+  <div class="tabela-container">
+    <table class="tabela-ordens">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Técnico</th>
+          <th>Status</th>
+          <th>Data Criação</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ❌ PROBLEMA: Sem loading state, sem empty state -->
+        <tr *ngFor="let ordem of ordens">
+          <td>{{ ordem.id }}</td>
+          <td>{{ ordem.titulo }}</td>
+          <td>{{ ordem.tecnico }}</td>
+          <td>
+            <app-status-chip [status]="ordem.status"></app-status-chip>
+          </td>
+          <td>{{ formatarData(ordem.dataCriacao) }}</td>
+          <td>
+            <div class="acoes">
+              <!-- ✅ MODERNIZADO: Botões com ícones e tooltips -->
+              <button 
+                mat-icon-button 
+                color="primary"
+                (click)="editarOrdem(ordem)"
+                matTooltip="Editar ordem de serviço"
+                class="action-edit">
+                <mat-icon>edit</mat-icon>
+              </button>
+              
+              <!-- ✅ MODERNIZADO: Dropdown de status com Material -->
+              <button 
+                mat-icon-button
+                [matMenuTriggerFor]="statusMenu"
+                matTooltip="Alterar status"
+                class="action-status">
+                <mat-icon>swap_horiz</mat-icon>
+              </button>
+              <mat-menu #statusMenu="matMenu">
+                <button mat-menu-item (click)="alterarStatus(ordem, 'Pendente')">
+                  <mat-icon>schedule</mat-icon>
+                  <span>Pendente</span>
+                </button>
+                <button mat-menu-item (click)="alterarStatus(ordem, 'Em Andamento')">
+                  <mat-icon>autorenew</mat-icon>
+                  <span>Em Andamento</span>
+                </button>
+                <button mat-menu-item (click)="alterarStatus(ordem, 'Concluída')">
+                  <mat-icon>check_circle</mat-icon>
+                  <span>Concluída</span>
+                </button>
+              </mat-menu>
+              
+              <button 
+                mat-icon-button 
+                color="warn"
+                (click)="excluir(ordem.id)"
+                matTooltip="Excluir ordem de serviço"
+                class="action-delete">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
+        
+        <!-- ❌ PROBLEMA: Mensagem de lista vazia mal implementada -->
+        <tr *ngIf="ordens.length === 0">
+          <td colspan="6" style="text-align: center; padding: 40px;">
+            Nenhuma ordem de serviço encontrada.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- ✅ MODERNIZADO: FAB Button para criar nova ordem -->
+  <app-fab-button 
+    icon="add" 
+    tooltip="Nova Ordem de Serviço" 
+    (onClick)="abrirFormulario()">
+  </app-fab-button>
+</div>

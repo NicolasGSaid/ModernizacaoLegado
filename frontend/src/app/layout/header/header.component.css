@@ -1,0 +1,145 @@
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-card) !important;
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-button {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--accent-primary);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent-primary-hover);
+  transform: scale(1.05);
+}
+
+.logo mat-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.desktop-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.desktop-nav a:hover {
+  color: var(--text-primary);
+  background-color: var(--accent-primary-light);
+}
+
+.desktop-nav a.active {
+  color: var(--accent-primary);
+  background-color: var(--accent-primary-light);
+}
+
+.desktop-nav a mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.user-section button {
+  color: white;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .header-container {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}

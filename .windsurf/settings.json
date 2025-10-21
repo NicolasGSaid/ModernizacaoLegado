@@ -1,0 +1,9 @@
+// .windsurf/settings.json
+{
+  "ai.contextFiles": [
+    ".ai-rules/01-context-management.md",
+    ".ai-rules/02-code-quality.md",
+    ".ai-rules/03-security.md"
+  ],
+  "ai.systemPrompt": "Siga rigorosamente as regras definidas nos arquivos .ai-rules/. Todo código deve ser production-ready."
+}

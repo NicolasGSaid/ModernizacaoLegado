@@ -1,0 +1,101 @@
+<div class="tecnico-list-container">
+  <!-- Header com título e botão -->
+  <div class="header">
+    <h2>Técnicos</h2>
+    <p-button 
+      label="Novo Técnico" 
+      icon="pi pi-plus" 
+      (onClick)="onCreate()">
+    </p-button>
+  </div>
+  
+  <!-- Barra de busca com PrimeNG -->
+  <div class="search-bar">
+    <input 
+      pInputText 
+      type="text" 
+      [(ngModel)]="filtro" 
+      (keyup.enter)="onSearch()"
+      class="search-input"
+      placeholder="Buscar por nome, email ou especialidade..." />
+    <p-button 
+      label="Buscar" 
+      icon="pi pi-search" 
+      severity="secondary"
+      (onClick)="onSearch()">
+    </p-button>
+  </div>
+
+  <!-- Tabela PrimeNG -->
+  <p-table 
+    [value]="tecnicos()" 
+    [paginator]="false"
+    [loading]="isLoading()"
+    styleClass="p-datatable-gridlines"
+    [tableStyle]="{'min-width': '50rem'}">
+    
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 5%">ID</th>
+        <th style="width: 20%">Nome</th>
+        <th style="width: 20%">Email</th>
+        <th style="width: 12%">Telefone</th>
+        <th style="width: 18%">Especialidade</th>
+        <th style="width: 10%">Status</th>
+        <th style="width: 10%">Cadastro</th>
+        <th style="width: 10%">Ações</th>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-tecnico>
+      <tr>
+        <td>{{ tecnico.id }}</td>
+        <td>{{ tecnico.nome }}</td>
+        <td>{{ tecnico.email }}</td>
+        <td>{{ tecnico.telefone }}</td>
+        <td>{{ tecnico.especialidade }}</td>
+        <td>
+          <p-tag 
+            [value]="tecnico.status" 
+            [severity]="getStatusSeverity(tecnico.status)">
+          </p-tag>
+        </td>
+        <td>{{ tecnico.dataCadastro | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <p-button 
+            icon="pi pi-pencil" 
+            [text]="true"
+            severity="info" 
+            size="small"
+            (onClick)="onEdit(tecnico)">
+          </p-button>
+          <p-button 
+            icon="pi pi-trash" 
+            [text]="true"
+            severity="danger" 
+            size="small"
+            (onClick)="onDelete(tecnico)">
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8" style="text-align: center; padding: 2rem;">
+          <i class="pi pi-inbox" style="font-size: 3rem; color: #9e9e9e;"></i>
+          <p style="margin-top: 1rem; color: #757575;">Nenhum técnico encontrado</p>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <!-- Paginação customizada -->
+  <app-pagination
+    [page]="page()"
+    [pageSize]="pageSize()"
+    [totalItems]="totalItems()"
+    (pageChange)="onPageChange($event)"
+    (pageSizeChange)="onPageSizeChange($event)">
+  </app-pagination>
+</div>

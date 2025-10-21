@@ -1,0 +1,97 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ clienteId ? 'Editar Cliente' : 'Novo Cliente' }}</h2>
+  </div>
+
+  <p-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+      
+      <div class="field">
+        <label for="razaoSocial" class="required">Razão Social</label>
+        <input id="razaoSocial" type="text" pInputText formControlName="razaoSocial" placeholder="Digite a razão social" />
+        <small class="p-error" *ngIf="form.get('razaoSocial')?.hasError('required') && form.get('razaoSocial')?.touched">
+          Razão social é obrigatória
+        </small>
+        <small class="p-error" *ngIf="form.get('razaoSocial')?.hasError('minlength') && form.get('razaoSocial')?.touched">
+          Mínimo de 3 caracteres
+        </small>
+      </div>
+
+      <div class="field">
+        <label for="nomeFantasia">Nome Fantasia</label>
+        <input id="nomeFantasia" type="text" pInputText formControlName="nomeFantasia" placeholder="Digite o nome fantasia" />
+      </div>
+
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="cnpj" class="required">CNPJ</label>
+            <p-inputMask id="cnpj" formControlName="cnpj" mask="99.999.999/9999-99" placeholder="00.000.000/0000-00"></p-inputMask>
+            <small class="p-error" *ngIf="form.get('cnpj')?.hasError('required') && form.get('cnpj')?.touched">
+              CNPJ é obrigatório
+            </small>
+            <small class="p-error" *ngIf="form.get('cnpj')?.hasError('pattern') && form.get('cnpj')?.touched">
+              CNPJ inválido
+            </small>
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <p-inputMask id="telefone" formControlName="telefone" mask="(99) 99999-9999" placeholder="(00) 00000-0000"></p-inputMask>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email" class="required">Email</label>
+        <input id="email" type="email" pInputText formControlName="email" placeholder="email@exemplo.com" />
+        <small class="p-error" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+          Email é obrigatório
+        </small>
+        <small class="p-error" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+          Email inválido
+        </small>
+      </div>
+
+      <div class="p-grid">
+        <div class="p-col-12 p-md-8">
+          <div class="field">
+            <label for="endereco">Endereço</label>
+            <input id="endereco" type="text" pInputText formControlName="endereco" placeholder="Rua, número" />
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-4">
+          <div class="field">
+            <label for="cep">CEP</label>
+            <p-inputMask id="cep" formControlName="cep" mask="99999-999" placeholder="00000-000"></p-inputMask>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" type="text" pInputText formControlName="cidade" placeholder="Nome da cidade" />
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6">
+          <div class="field">
+            <label for="estado">Estado</label>
+            <input id="estado" type="text" pInputText formControlName="estado" placeholder="UF" maxlength="2" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <p-button label="Cancelar" icon="pi pi-times" severity="secondary" [text]="true" type="button" (onClick)="onCancel()"></p-button>
+        <p-button [label]="clienteId ? 'Atualizar' : 'Criar'" icon="pi pi-check" type="submit" [disabled]="!form.valid"></p-button>
+      </div>
+
+    </form>
+  </p-card>
+</div>
